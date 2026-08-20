@@ -1,0 +1,439 @@
+/* ==========================================================================
+   WORLD PAGE STYLES (world.css)
+   Completely distinct color scheme, layout, and typography.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. RESET & VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    /* Color Scheme: Slate, Navy, Cream, and Brick */
+    --bg-parchment: #eef1f3;
+    --text-navy: #1a2530;
+    --text-charcoal: #3c4856;
+    --accent-brick: #b04636;
+    --border-steel: #9ba4b5;
+    --bg-white: #ffffff;
+
+    /* Typography: Transitional Serifs & Handwritten */
+    --font-primary: 'Source Serif 4', serif;
+    --font-display: 'Libre Baskerville', serif;
+    --font-script: 'Homemade Apple', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.page-world {
+    background-color: var(--bg-parchment);
+    color: var(--text-navy);
+    font-family: var(--font-primary);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. MASTHEAD & NAVIGATION (Broadsheet Style)
+   -------------------------------------------------------------------------- */
+.broadsheet-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-bottom: 4px double var(--text-navy);
+    margin-bottom: 3rem;
+}
+
+.header-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border-steel);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-charcoal);
+}
+
+.handwritten-annotation {
+    font-family: var(--font-script);
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--accent-brick);
+    font-size: 1.1rem;
+    transform: rotate(-2deg);
+}
+
+.brand-masthead {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.masthead-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-navy);
+    text-decoration: none;
+    line-height: 1;
+}
+
+.broadsheet-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-steel);
+}
+
+.broadsheet-nav a {
+    color: var(--text-navy);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.broadsheet-nav a:hover {
+    color: var(--accent-brick);
+}
+
+.broadsheet-nav a.active-nav {
+    color: var(--accent-brick);
+    border-bottom: 2px solid var(--accent-brick);
+    padding-bottom: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. EDITORIAL GRID LAYOUT
+   -------------------------------------------------------------------------- */
+.editorial-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "lead sidebar"
+        "secondary sidebar"
+        "appendix appendix";
+    gap: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. LEAD STORY
+   -------------------------------------------------------------------------- */
+.lead-story {
+    grid-area: lead;
+}
+
+.story-header {
+    margin-bottom: 2rem;
+}
+
+.headline {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-navy);
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    color: var(--text-charcoal);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.byline {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--border-steel);
+    border-bottom: 1px solid var(--border-steel);
+    padding: 0.5rem 0;
+}
+
+.story-content {
+    font-size: 1.1rem;
+    color: var(--text-navy);
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.dropcap {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    color: var(--text-navy);
+}
+
+.story-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    border-bottom: 1px dashed var(--border-steel);
+    padding-bottom: 0.5rem;
+}
+
+.pull-quote {
+    margin: 3rem 0;
+    padding: 2rem;
+    border-left: 4px solid var(--accent-brick);
+    background-color: var(--bg-white);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 2px 2px 0px var(--border-steel);
+}
+
+.handwritten-cite {
+    display: block;
+    font-family: var(--font-script);
+    font-size: 1.25rem;
+    color: var(--accent-brick);
+    margin-top: 1rem;
+    font-style: normal;
+    text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   5. SIDEBAR / GLOSSARY
+   -------------------------------------------------------------------------- */
+.sidebar-glossary {
+    grid-area: sidebar;
+    border-left: 1px solid var(--border-steel);
+    padding-left: 2rem;
+}
+
+.sidebar-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--text-navy);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-intro {
+    font-size: 0.95rem;
+    color: var(--text-charcoal);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.dictionary-list dt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-navy);
+}
+
+.dictionary-list dd {
+    font-size: 0.95rem;
+    color: var(--text-charcoal);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dotted var(--border-steel);
+}
+
+.sidebar-ad {
+    margin-top: 3rem;
+    padding: 4rem 2rem;
+    background-color: var(--text-navy);
+    text-align: center;
+    border: 4px double var(--border-steel);
+}
+
+.handwritten-ad-text {
+    font-family: var(--font-script);
+    color: var(--bg-parchment);
+    font-size: 1.5rem;
+    transform: rotate(-5deg);
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECONDARY FEATURES
+   -------------------------------------------------------------------------- */
+.secondary-features {
+    grid-area: secondary;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border-top: 1px solid var(--border-steel);
+    padding-top: 2rem;
+}
+
+.feature-card {
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    border: 1px solid var(--border-steel);
+}
+
+.feature-headline {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent-brick);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   7. DATA APPENDIX (TABLE)
+   -------------------------------------------------------------------------- */
+.data-appendix {
+    grid-area: appendix;
+    margin-top: 2rem;
+    padding-top: 3rem;
+    border-top: 4px double var(--text-navy);
+}
+
+.appendix-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.data-appendix p {
+    color: var(--text-charcoal);
+    margin-bottom: 2rem;
+}
+
+.editorial-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-steel);
+}
+
+.editorial-table th, 
+.editorial-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-steel);
+}
+
+.editorial-table th {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    background-color: var(--text-navy);
+    color: var(--bg-parchment);
+    letter-spacing: 0.05em;
+}
+
+.editorial-table td {
+    font-size: 0.95rem;
+    color: var(--text-charcoal);
+}
+
+.editorial-table td strong {
+    color: var(--text-navy);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+.broadsheet-footer {
+    max-width: 1200px;
+    margin: 4rem auto 2rem;
+    border-top: 1px solid var(--border-steel);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-charcoal);
+    margin-bottom: 1rem;
+}
+
+.handwritten-footer {
+    font-family: var(--font-script);
+    color: var(--accent-brick);
+    font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "lead"
+            "sidebar"
+            "secondary"
+            "appendix";
+    }
+    
+    .sidebar-glossary {
+        border-left: none;
+        padding-left: 0;
+        border-top: 4px double var(--text-navy);
+        padding-top: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .header-topline {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .handwritten-annotation {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .secondary-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .broadsheet-nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .editorial-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

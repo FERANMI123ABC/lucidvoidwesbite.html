@@ -1,0 +1,365 @@
+/* ============================================================
+   LUCID//VOID — VISION PAGE
+   Philosophy / Mission / Values / Point of View
+============================================================ */
+
+.lucid-vision-page {
+    --page-bg: #07060a;
+    --page-panel: #0d0b12;
+    --page-panel-2: #131020;
+    --page-line: rgba(255,255,255,.075);
+    --page-soft: #c9c3d2;
+    --page-muted: #817a8b;
+    --page-glow: rgba(148,122,194,.16);
+    background: var(--page-bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.lucid-vision-page main { position: relative; isolation: isolate; }
+.lucid-vision-page section { scroll-margin-top: 100px; }
+
+/* HERO ------------------------------------------------------ */
+.lucid-vision-page #vision-page-hero {
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 78% 24%, rgba(144,116,190,.16), transparent 26%),
+        radial-gradient(circle at 12% 90%, rgba(54,69,113,.13), transparent 32%),
+        linear-gradient(135deg,#050509 0%,#0d0a14 42%,#161126 72%,#080d16 100%);
+}
+
+.lucid-vision-page #vision-page-hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,transparent 0 49.9%,rgba(255,255,255,.018) 50%,transparent 50.1%);
+    pointer-events:none;
+    z-index:-3;
+}
+
+.lucid-vision-page #vision-page-hero::after {
+    content:"";
+    position:absolute;
+    width:38vw;
+    aspect-ratio:1;
+    right:-8vw;
+    top:18%;
+    border-radius:50%;
+    background:rgba(130,108,174,.11);
+    filter:blur(100px);
+    z-index:-4;
+    animation: visionLight 12s ease-in-out infinite alternate;
+}
+
+@keyframes visionLight {
+    from { transform:translate3d(0,0,0) scale(1); }
+    to { transform:translate3d(-3vw,2vh,0) scale(1.08); }
+}
+
+.lucid-vision-page #vision-page-hero .hero-bg-word--top {
+    color:rgba(210,200,228,.035);
+    right:-7%;
+    top:15%;
+}
+
+.lucid-vision-page #vision-page-hero .hero-bg-word--bottom {
+    color:rgba(0,0,0,.34);
+    right:-6%;
+    bottom:5%;
+}
+
+.lucid-vision-page #vision-page-hero .hero-title {
+    font-size:clamp(5rem,14.5vw,18rem);
+    line-height:.63;
+    letter-spacing:-.065em;
+}
+
+.lucid-vision-page #vision-page-hero .hero-title-line--one { color:#f0edf5; }
+.lucid-vision-page #vision-page-hero .hero-title-line--two {
+    margin-left:10vw;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(211,203,224,.65);
+}
+.lucid-vision-page #vision-page-hero .hero-title-line--three { margin-left:3vw; color:#aaa4b7; }
+.lucid-vision-page #vision-page-hero .hero-title-line--four { margin-left:13vw; }
+.lucid-vision-page #vision-page-hero .hero-title-line--four em { color:#9c8fc6; }
+.lucid-vision-page #vision-page-hero .hero-editorial { max-width:390px; }
+.lucid-vision-page #vision-page-hero .hero-editorial-copy p { color:#91899a; }
+.lucid-vision-page #vision-page-hero .hero-coordinates,
+.lucid-vision-page #vision-page-hero .hero-meta { color:#6e6878; }
+
+/* MISSION ---------------------------------------------------- */
+.lucid-vision-page #mission {
+    min-height:92svh;
+    padding:var(--section) var(--page);
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 76% 22%,rgba(126,103,166,.09),transparent 25%),
+        linear-gradient(130deg,#08070b,#14101d 64%,#0b0f18);
+}
+
+.lucid-vision-page #mission::before {
+    content:"02";
+    position:absolute;
+    right:-2%;
+    bottom:-10%;
+    font-family:var(--display);
+    font-size:clamp(14rem,36vw,44rem);
+    line-height:.55;
+    letter-spacing:-.08em;
+    color:rgba(204,193,221,.02);
+    pointer-events:none;
+}
+
+.lucid-vision-page #mission .vision-layout {
+    max-width:1500px;
+    min-height:72vh;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.55fr 1.2fr 1fr;
+    gap:clamp(2rem,6vw,8rem);
+    align-items:center;
+}
+
+.lucid-vision-page #mission .vision-heading h2 {
+    margin:0;
+    font-size:clamp(5rem,13vw,16rem);
+    line-height:.63;
+    letter-spacing:-.06em;
+}
+
+.lucid-vision-page #mission .vision-heading h2 em {
+    display:block;
+    margin-left:7vw;
+    font-style:normal;
+    color:var(--lucid-light);
+}
+
+.lucid-vision-page #mission .vision-copy {
+    max-width:430px;
+    justify-self:end;
+}
+
+.lucid-vision-page #mission .vision-lead {
+    margin:0 0 1.5rem;
+    font-size:clamp(1.45rem,2.5vw,2.6rem);
+    line-height:1;
+    letter-spacing:-.045em;
+    color:#ddd8e5;
+}
+
+.lucid-vision-page #mission .vision-rule {
+    height:1px;
+    margin-bottom:1.5rem;
+    background:var(--page-line);
+}
+
+.lucid-vision-page #mission .vision-copy p:not(.vision-lead) {
+    margin:0 0 1.35rem;
+    font-family:var(--mono);
+    font-size:.58rem;
+    line-height:1.9;
+    color:var(--page-muted);
+}
+
+.lucid-vision-page #mission .editorial-link {
+    display:inline-flex;
+    gap:1rem;
+    margin-top:.4rem;
+    padding-bottom:.45rem;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    font-family:var(--mono);
+    font-size:.48rem;
+    letter-spacing:.13em;
+    transition:gap .45s var(--ease),color .3s ease;
+}
+
+.lucid-vision-page #mission .editorial-link:hover { gap:1.8rem; color:var(--lucid-light); }
+
+/* VALUES ----------------------------------------------------- */
+.lucid-vision-page #values {
+    min-height:100svh;
+    padding:var(--section) var(--page);
+    overflow:hidden;
+    background:#100d16;
+}
+
+.lucid-vision-page #values .manifesto-stage { min-height:82svh; }
+.lucid-vision-page #values .manifesto-bg-word { color:rgba(195,182,216,.025); }
+.lucid-vision-page #values .manifesto-copy h2 { font-size:clamp(5rem,12vw,15rem); }
+.lucid-vision-page #values .manifesto-copy h2 em { color:var(--lucid-light); }
+.lucid-vision-page #values .manifesto-copy h2 strong { color:#30263d; }
+.lucid-vision-page #values .manifesto-shape { border-color:rgba(179,154,255,.16); }
+.lucid-vision-page #values .manifesto-shape-inner { border-color:rgba(179,154,255,.08); }
+
+/* DESIGN PRINCIPLES ----------------------------------------- */
+.lucid-vision-page #design-principles {
+    padding:var(--section) var(--page);
+    background:#e0dce4;
+    color:#0b0a0f;
+}
+
+.lucid-vision-page #design-principles .services-intro {
+    max-width:1500px;
+    margin:0 auto var(--section);
+    display:grid;
+    grid-template-columns:.55fr 1fr .7fr;
+    gap:clamp(2rem,5vw,7rem);
+    align-items:end;
+}
+
+.lucid-vision-page #design-principles .services-intro h2 {
+    margin:0;
+    font-family:var(--display);
+    font-size:clamp(4.8rem,10vw,13rem);
+    line-height:.65;
+    letter-spacing:-.06em;
+}
+
+.lucid-vision-page #design-principles .services-intro h2 span,
+.lucid-vision-page #design-principles .services-intro h2 em { display:block; font-style:normal; }
+.lucid-vision-page #design-principles .services-intro h2 em { margin-left:8vw; color:#65558a; }
+.lucid-vision-page #design-principles .services-intro>p {
+    margin:0;
+    max-width:330px;
+    justify-self:end;
+    font-family:var(--mono);
+    font-size:.56rem;
+    line-height:1.9;
+    color:#68626e;
+}
+
+.lucid-vision-page #design-principles .service-list { max-width:1500px; margin:auto; }
+.lucid-vision-page #design-principles .service-row {
+    min-height:155px;
+    padding:1.4rem 0;
+    display:grid;
+    grid-template-columns:60px 1fr 1fr 30px;
+    gap:2rem;
+    align-items:center;
+    border-top:1px solid rgba(0,0,0,.13);
+}
+.lucid-vision-page #design-principles .service-row:last-child { border-bottom:1px solid rgba(0,0,0,.13); }
+.lucid-vision-page #design-principles .service-row h3 {
+    margin:0;
+    font-family:var(--display);
+    font-size:clamp(2.6rem,5.4vw,6.5rem);
+    line-height:.72;
+    letter-spacing:-.045em;
+}
+.lucid-vision-page #design-principles .service-row h3 em { color:#65558a; font-style:normal; }
+.lucid-vision-page #design-principles .service-row p {
+    max-width:360px;
+    margin:0;
+    font-family:var(--mono);
+    font-size:.53rem;
+    line-height:1.8;
+    color:#6f6975;
+}
+.lucid-vision-page #design-principles .service-number,
+.lucid-vision-page #design-principles .service-arrow { color:#5d5664; }
+
+/* POINT OF VIEW --------------------------------------------- */
+.lucid-vision-page #point-of-view {
+    min-height:88svh;
+    padding:var(--section) var(--page);
+    background:
+        radial-gradient(circle at 78% 25%,rgba(132,110,175,.12),transparent 28%),
+        #0a080e;
+}
+.lucid-vision-page #point-of-view .feature-header {
+    max-width:1500px;
+    margin:0 auto 4rem;
+    display:grid;
+    grid-template-columns:.55fr 1fr .7fr;
+    gap:clamp(2rem,5vw,7rem);
+    align-items:end;
+}
+.lucid-vision-page #point-of-view .feature-header h2 {
+    margin:0;
+    font-family:var(--display);
+    font-size:clamp(4.8rem,10vw,13rem);
+    line-height:.65;
+    letter-spacing:-.06em;
+}
+.lucid-vision-page #point-of-view .feature-header h2 span,
+.lucid-vision-page #point-of-view .feature-header h2 em { display:block; font-style:normal; }
+.lucid-vision-page #point-of-view .feature-header h2 em { margin-left:8vw; color:var(--lucid-light); }
+.lucid-vision-page #point-of-view .feature-header-copy p { margin:0; max-width:320px; justify-self:end; font-family:var(--mono); font-size:.57rem; line-height:1.9; color:var(--page-muted); }
+
+.lucid-vision-page #point-of-view .dreamscape {
+    min-height:62vh;
+    max-width:1500px;
+    margin:auto;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 74% 27%,rgba(126,104,168,.14),transparent 27%),
+        linear-gradient(145deg,#1a1424,#0d0b12 70%);
+}
+.lucid-vision-page #point-of-view .dream-type { color:rgba(209,195,229,.035); }
+.lucid-vision-page #point-of-view .dream-sun { opacity:.45; filter:saturate(.5); }
+.lucid-vision-page #point-of-view .dream-monolith { background:linear-gradient(115deg,#554967,#201a2c 65%,#08070d); }
+
+/* TAKEAWAY -------------------------------------------------- */
+.lucid-vision-page #takeaway {
+    min-height:72vh;
+    padding:var(--section) var(--page);
+    background:#d1ccd8;
+    color:#0a090e;
+}
+.lucid-vision-page #takeaway .signal-heading { max-width:1500px; margin:0 auto 5rem; }
+.lucid-vision-page #takeaway .signal-heading h2 { font-size:clamp(5rem,11vw,14rem); line-height:.64; letter-spacing:-.06em; }
+.lucid-vision-page #takeaway .signal-heading h2 span,
+.lucid-vision-page #takeaway .signal-heading h2 em { display:block; font-style:normal; }
+.lucid-vision-page #takeaway .signal-heading h2 em { margin-left:10vw; color:#63537f; }
+.lucid-vision-page #takeaway .signal-grid { max-width:1500px; margin:auto; }
+
+/* FINAL ------------------------------------------------------ */
+.lucid-vision-page #vision-final {
+    min-height:88svh;
+    background:
+        radial-gradient(circle at 50% 25%,rgba(134,110,179,.12),transparent 30%),
+        #07060a;
+}
+.lucid-vision-page #vision-final .final-statement-inner h2 { font-size:clamp(5rem,11.5vw,15rem); line-height:.62; }
+.lucid-vision-page #vision-final .final-statement-inner h2 em { color:var(--lucid-light); }
+
+/* RESPONSIVE ------------------------------------------------ */
+@media (max-width:1100px) {
+    .lucid-vision-page #mission .vision-layout,
+    .lucid-vision-page #design-principles .services-intro,
+    .lucid-vision-page #point-of-view .feature-header { grid-template-columns:40px 1fr; }
+    .lucid-vision-page #mission .vision-heading,
+    .lucid-vision-page #mission .vision-copy,
+    .lucid-vision-page #design-principles .services-intro>div:nth-child(2),
+    .lucid-vision-page #design-principles .services-intro>p,
+    .lucid-vision-page #point-of-view .feature-header>div:nth-child(2),
+    .lucid-vision-page #point-of-view .feature-header-copy { grid-column:2; justify-self:start; }
+}
+
+@media (max-width:700px) {
+    .lucid-vision-page #vision-page-hero .hero-title { font-size:clamp(4rem,18vw,7rem); }
+    .lucid-vision-page #vision-page-hero .hero-title-line--two { margin-left:8vw; }
+    .lucid-vision-page #vision-page-hero .hero-title-line--four { margin-left:7vw; }
+    .lucid-vision-page #mission { padding:6rem var(--page); }
+    .lucid-vision-page #mission .vision-layout { grid-template-columns:25px 1fr; gap:1rem; }
+    .lucid-vision-page #mission .vision-copy { max-width:none; }
+    .lucid-vision-page #design-principles { padding:6rem var(--page); }
+    .lucid-vision-page #design-principles .services-intro { grid-template-columns:25px 1fr; gap:1rem; }
+    .lucid-vision-page #design-principles .service-row { grid-template-columns:25px 1fr 25px; gap:1rem; min-height:0; }
+    .lucid-vision-page #design-principles .service-row p { grid-column:2/4; }
+    .lucid-vision-page #point-of-view { padding:6rem var(--page); }
+    .lucid-vision-page #point-of-view .feature-header { grid-template-columns:25px 1fr; gap:1rem; }
+    .lucid-vision-page #point-of-view .feature-header-copy { grid-column:2; }
+    .lucid-vision-page #point-of-view .dreamscape { min-height:62svh; }
+    .lucid-vision-page #takeaway { padding:6rem var(--page); }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .lucid-vision-page #vision-page-hero::after { animation:none; }
+}
